@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hän</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
+		<!--Favicons-->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<!--Icons-->
+		<script
+			src="https://kit.fontawesome.com/b2f89fe017.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body class="preload">
+		<main>
+			<div id="messages"></div>
+			<div id="question-container">
+				<input
+					type="text"
+					id="question-field"
+					value=""
+					placeholder="Kirjoita viesti"
+					autocomplete="off"
+					maxlength="140"
+				/>
+				<button
+					type="button"
+					id="ask"
+					value="Ask anything"
+					onclick="askAnything()"
+				>
+					<i class="fa-solid fa-paper-plane"></i>
+				</button>
+			</div>
+		</main>
+		<button id="refresh-button" onclick="refresh()">
+			<span class="material-symbols-rounded">refresh</span>
+		</button>
+		<button id="modal-button" data-modal-target="#modal">
+			<span class="material-symbols-rounded"> help </span>
+		</button>
+		<div class="modal" id="modal">
+			<button data-close-button class="close-button">
+				<span class="material-symbols-rounded"> close </span>
+			</button>
+			<h1>Hän</h1>
+			<p>
+				Mitä jos voisimme keskustella eläinten kanssa? Mitä haluaisit kysyä?
+				<br /><br />
+				Tulevaisuudessa voimme todennäköisesti käyttää "eläinten
+				Google-kääntäjää", mutta sitä odotellessa voimme vain arvailla millaisia
+				vastauksia tulemme saamaan.
+				<br /><br />
+				Tämän teoksen tarkoituksena on pohtia, voisiko tekoäly auttaa meitä
+				ymmärtämään eläimiä paremmin. Voisiko se antaa eläimille mahdollisuuden
+				tulla kuulluksi? Kenen äänellä tekoäly oikeastaan puhuu?
+				<br /><br />
+				Vastaukset tuotetaan Open AI -säätiön GPT-3-kielimallin avulla.
+				Tekoälyeläin ei muista aiempia keskusteluja, joten parhaat vastaukset
+				saat kysymällä kokonaisia kysymyksiä. Eläimelle on kerrottu että hän on
+				tuotantoeläin.
+				<br /><br />
+				Tekoälyeläimen kuva on luotu DALL-E 2 -sovelluksella.
+			</p>
+		</div>
+		<div id="overlay"></div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+			integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="app.js"></script>
+	</body>
+</html>
